@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Лента постов</title>
+    <title>Posts</title>
 </head>
 <body>
-    <h1>Лента постов</h1>
+    <h1>Posts</h1>
     
     {% for post in posts %}
         <div>
@@ -12,20 +12,20 @@
             <p>{{ post.created_at }}</p>
         </div>
     {% empty %}
-        <p>Нет постов для отображения.</p>
+        <p>No posts</p>
     {% endfor %}
 
     <div>
         {% if is_paginated %}
             <span>
                 {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
                 {% endif %}
 
-                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                Page {{ page_obj.number }} from {{ page_obj.paginator.num_pages }}
 
                 {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
                 {% endif %}
             </span>
         {% endif %}
