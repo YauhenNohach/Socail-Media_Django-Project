@@ -1,0 +1,56 @@
+# Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+*.log
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django-related files
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+db.sqlite3
+/media/
+*.mo
+*.pot
+# If you're using the local Django settings module
+/local_settings.py
+
+# Secret key and other sensitive info
+.env
+*.env
+
+# Static and media files
+/static/
+staticfiles/
+media/
+*.pid
+
+# VSCode files
+.vscode/
+
+# PyCharm project files
+.idea/
+
+# Node.js files (if using npm/yarn)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# MacOS-related files
+.DS_Store
+
+# Windows thumbnail caches
+Thumbs.db
+ehthumbs.db
