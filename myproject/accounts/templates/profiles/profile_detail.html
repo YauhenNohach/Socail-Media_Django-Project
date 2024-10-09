@@ -1,0 +1,16 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/profiles.css' %}">
+</head>
+<body>
+{% block content %}
+<div class="profile-detail">
+    <h2>{{ profile.username }}</h2>
+    <img src="{{ profile.avatar.url }}" alt="{{ profile.username }}'s avatar">
+    <p>Email: {{ profile.email }}</p>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/validation_register.js' %}"></script>
+</head>
+<body>
+    {% block content %}
+    <div class="login-form">
+        <h2>login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="error">{{ form.non_field_errors }}</div>
+            {% endif %}
+            {{ form.username.label }} 
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
+
+            {{ form.password.label }} 
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div class="error">{{ form.password.errors }}</div>
+            {% endif %}
+
+            <button type="submit">login</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/rate_photo.css' %}">
+  </head>
+  <body>
+<form method="post">
+  {% csrf_token %}
+  <div>
+      <img src="{{ profile.avatar.url }}" alt="Avatar" class="profile-avatar">
+      <p>{{ photo.description }}</p>
+  </div>
+  <div>
+      {{ form.score }}
+      <button type="submit">Rate</button>
+  </div>
+  <input type="hidden" name="photo_id" value="{{ photo.id }}">
+</form>
+</body>
+</html>

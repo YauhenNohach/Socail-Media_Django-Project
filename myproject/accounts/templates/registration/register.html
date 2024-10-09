@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <script src="{% static 'js/validation_register.js' %}"></script>
+</head>
+<body>
+    {% block content %}
+    <div class="registration-form">
+        <h2>Registration</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registration</button>
+        </form>
+        {% if form.errors %}
+            <div class="form-errors">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        <li>{{ field }}: {{ errors|striptags }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>
