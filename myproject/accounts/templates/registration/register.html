@@ -2,12 +2,12 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'css/registration.css' %}">
-    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/validation_register.js' %}"></script>
 </head>
 <body>
     {% block content %}
     <div class="registration-form">
-        <h2>Регистрация</h2>
+        <h2>Registration</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
